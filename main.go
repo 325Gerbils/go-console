@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"os"
 	"regexp"
+	"fmt"
 )
 
 // WaitForInput nil->string
@@ -16,6 +17,15 @@ func WaitForInput() string {
 		text, _ := reader.ReadString('\n')
 		if text != "" {
 			return text
+		}
+	}
+}
+
+func WaitForInput2() (out string) {
+	for {
+		fmt.Scanln(&out)
+		if out != nil {
+			return 
 		}
 	}
 }
